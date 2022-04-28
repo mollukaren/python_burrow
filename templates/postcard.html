@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block title %}Address Form{% endblock %}
+
+{% block main %}
+
+{% if e != None %}
+<div class="alert alert-warning" role="alert">
+  Your Postcard Couldn't Be Craw-ated: {{e}}
+</div>
+
+  {% endif %}
+
+<div class="container-fluid">
+    <h1>Send a Postcrawd</h1>
+    <p>Add at least one address to your address book to send a postcard.</p>
+
+    <form action="#" method="POST">
+      <div class="form-row">
+        <div class="form-group col-md-8">
+          <label for="pscname" class="form-label">Name</label>
+          <input type="text" class="form-control" name="pscname" placeholder="Postcard Addressee Goes Here">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="col-md-5">
+          <label for="font_size" class="form-label">Font</label>
+          <select name="font_size" class="form-select">
+            <option>16px</option>
+            <option>20px</option>
+            <option>24px</option>
+          </select>
+        </div>
+
+
+        <div class="col-md-5">
+          <label for="color" class="form-label">Color</label>
+          <select name="color" class="form-select">
+            <option>blue</option>
+            <option>red</option>
+            <option>green</option>
+          </select>
+        </div>
+
+        <div class="col-md-5">
+          <label for="psc_image" class="form-label">Image</label>
+          <select name="psc_image" class="form-select">
+            <option>Beach</option>
+            <option>Jungle</option>
+          </select>
+        </div>
+
+        <div class="col-md-5">
+          <label for="address" class="form-label">Address</label>
+          <select name="address" class="form-select">
+            {% for address in addresses %}
+            <option>{{ address.desc }}</option>
+            {% endfor %}
+          </select>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-md-5">
+          <input type="submit" value="Craw-ate a Postcard" onclick="window.location.href = '{{ url_for('postcard') }}';">
+        </div>
+      </div>
+    </form>
+  
+</div>
+
+  {% endblock %}

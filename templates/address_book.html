@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}Address Book{% endblock %}
+
+{% block main %}
+
+
+<div class="container-fluid">
+    <h1>Address Book</h1>
+    
+    
+    <input type="submit" value="Craw-ate an Address" onclick="window.location.href = '{{ url_for('addaddress') }}';">
+
+    <table class="table">
+        <tr>
+            <th>Address Label</th>
+            <th>Recipient Name</th>
+            <th>Address1</th>
+            <th>Address2</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Zip</th>
+            <th>Country</th>
+        </tr>
+
+        <!-- here is a for-loop to give us all the socks -->
+        {% for address in addresses %}
+        <tr>
+            <td>{{ address.desc }}</td>
+            <td>{{ address.name }}</td>
+            <td>{{ address.address1 }}</td>
+            <td>{{ address.address2 }}</td>
+            <td>{{ address.city }}</td>
+            <td>{{ address.state }}</td>
+            <td>{{ address.zip5 }}</td>
+            <td>{{ address.countrycode }}</td>
+        </tr>
+        {% endfor %}
+
+  </div>
+
+  {% endblock %}

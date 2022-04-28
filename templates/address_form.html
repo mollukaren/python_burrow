@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+
+{% block title %}Address Form{% endblock %}
+
+{% block main %}
+
+{% if e != None %}
+<div class="alert alert-warning" role="alert">
+  Your Address Couldn't Be Craw-ated: {{e}}
+</div>  
+  {% endif %}
+
+<div class="container-fluid">
+    <h1>Add an Address to your Address Book</h1>
+    <p>Note that the Country section only accepts a 2 letter country short-name code (ISO 3166).</p>
+  
+    <form action="#" method="POST">
+      <div class="form-group col-md-6">
+        <label for="inputdesc" class="form-label">Address Label</label>
+        <input type="text" class="form-control" name="inputdesc">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputname" class="form-label">Name</label>
+        <input type="text" class="form-control" name="inputname">
+      </div>
+      <div class="form-group col-md-12">
+        <label for="inputAddress" class="form-label">Address Line 1</label>
+        <input type="text" class="form-control" name="inputAddress1" placeholder="1234 Main St">
+      </div>
+      <div class="form-group col-md-12">
+        <label for="inputAddress2" class="form-label">Address Line 2</label>
+        <input type="text" class="form-control" name="inputAddress2" placeholder="Apartment, studio, or floor">
+      </div>
+      <div class="form-group col-md-5">
+        <label for="inputCity" class="form-label">City</label>
+        <input type="text" class="form-control" name="inputCity">
+      </div>
+      <div class="form-group col-md-1">
+        <label for="inputState" class="form-label">State</label>
+        <select name="inputState" class="form-select">
+          <option selected>Choose...</option>
+          <option>AL</option>
+          <option>AK</option>
+          <option>AZ</option>
+          <option>AR</option>
+          <option>CA</option>
+          <option>CO</option>
+          <option>CT</option>
+          <option>DE</option>
+          <option>FL</option>
+          <option>GA</option>
+          <option>HI</option>
+          <option>ID</option>
+          <option>IL</option>
+          <option>IN</option>
+          <option>IA</option>
+          <option>KS</option>
+          <option>KY</option>
+          <option>LA</option>
+          <option>ME</option>
+          <option>MD</option>
+          <option>MA</option>
+          <option>MI</option>
+          <option>MN</option>
+          <option>MS</option>
+          <option>MO</option>
+          <option>MT</option>
+          <option>NE</option>
+          <option>NV</option>
+          <option>NH</option>
+          <option>NJ</option>
+          <option>NM</option>
+          <option>NY</option>
+          <option>NC</option>
+          <option>ND</option>
+          <option>OH</option>
+          <option>OK</option>
+          <option>OR</option>
+          <option>PA</option>
+          <option>RI</option>
+          <option>SC</option>
+          <option>SD</option>
+          <option>TN</option>
+          <option>TX</option>
+          <option>UT</option>
+          <option>VT</option>
+          <option>VA</option>
+          <option>WA</option>
+          <option>WV</option>
+          <option>WI</option>
+          <option>WY</option>
+        </select>
+      </div>
+      <div class="form-group col-md-1">
+        <label for="inputZip" class="form-label">Zip</label>
+        <input type="text" class="form-control" name="inputZip">
+      </div>
+      <div class="form-group col-md-2">
+        <label for="inputCountry" class="form-label">Country</label>
+        <input type="text" class="form-control" name="inputCountry">
+      </div>
+      <div class="col-12">
+        <input type="submit" value="Save Address" class="btn btn-primary"></button>
+      </div>
+    </form>
+  
+  </div>
+
+  {% endblock %}
