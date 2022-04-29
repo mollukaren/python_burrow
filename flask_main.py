@@ -131,8 +131,8 @@ def postcard():
                     to_address_id
                     },
                 size = '6x11',
-                front = 'tmpl_0fa67f8cc683dcb',
-                back = 'tmpl_0fa67f8cc683dcb',
+                front = 'tmpl_3063ee02c202aab',
+                back = 'tmpl_3063ee02c202aab',
                 merge_variables = {
                     'name': pscname,
                     'fontsize' : font_size,
